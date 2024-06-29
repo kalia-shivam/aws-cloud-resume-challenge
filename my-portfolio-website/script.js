@@ -6,14 +6,6 @@ function toggleMenu() {
 }
 
 
-// const counter = document.querySelector(".counter-number");
-// async function updateCounter() {
-//   let response = await fetch("https://rnarsvlk4iq4vupnocd6eviqvm0ocqyl.lambda-url.us-east-1.on.aws/");
-//   let data = await response.json();
-//   counter.innerHTML = ` Views: ${data}`;
-// }
-
-// updateCounter();
 const viewCountElement = document.querySelector(".counter-number");
 const viewCountElementMobile = document.querySelector(".counter-number-mobile-view");
 const typingSpeed = 50; // Adjust typing speed (milliseconds per character)
