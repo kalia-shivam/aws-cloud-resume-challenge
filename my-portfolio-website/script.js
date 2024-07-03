@@ -13,7 +13,7 @@ const targetText = `Viewed by Tech Enthusiasts!`; // Placeholder text for typing
 
 async function updateCounter() {
   try {
-    let response = await fetch("https://rnarsvlk4iq4vupnocd6eviqvm0ocqyl.lambda-url.us-east-1.on.aws/");
+    let response = await fetch("https://e7tj7ha3pzjjy4szit4hnxa5qm0alcbo.lambda-url.us-east-1.on.aws/");
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
