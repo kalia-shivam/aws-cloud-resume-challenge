@@ -31,7 +31,15 @@ jobs:
         working-directory: ./infra  # Update with your Terraform directory path
 
       - name: Terraform Format Check
-        run: terraform fmt -check
+        run: terraform fmt -check -diff
+        working-directory: ./infra
+
+        - name: Check for Formatting Issues
+        run: |
+          if terraform fmt -check -diff | grep -q '^'; then
+            echo "Error: Terraform files are not formatted properly. Please run 'terraform fmt' and commit the changes."
+            exit 1
+          fi
         working-directory: ./infra
 
       - name: Terraform Validate
