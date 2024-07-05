@@ -34,7 +34,7 @@ jobs:
         run: terraform fmt -check -diff
         working-directory: ./infra
 
-        - name: Check for Formatting Issues
+      - name: Check for Formatting Issues
         run: |
           if terraform fmt -check -diff | grep -q '^'; then
             echo "Error: Terraform files are not formatted properly. Please run 'terraform fmt' and commit the changes."
