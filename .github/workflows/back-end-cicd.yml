@@ -17,7 +17,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.9.1  # Update to the version you're using
+          terraform_version: 1.9.1 
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -28,7 +28,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./infra  # Update with your Terraform directory path
+        working-directory: ./infra  
 
       - name: Terraform Validate
         run: terraform validate

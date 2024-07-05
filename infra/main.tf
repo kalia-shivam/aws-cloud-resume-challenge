@@ -66,8 +66,8 @@ resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
 
 data "archive_file" "zip_the_python_code" {
   type        = "zip"
-  source_file = "${path.module}/lambda/cloud-resume-funtion.py"
-  output_path = "${path.module}/lambda/cloud-resume-funtion.zip"
+  source_file = "${path.module}/lambda_function/cloud-resume-funtion.py"
+  output_path = "${path.module}/lambda_function/cloud-resume-funtion.zip"
 }
 
 resource "aws_lambda_function_url" "url1" {
@@ -76,7 +76,7 @@ resource "aws_lambda_function_url" "url1" {
 
   cors {
     allow_credentials = true
-    allow_origins     = ["*"]
+    allow_origins     = ["https://portfolio.shivamkalia.tech"]
     allow_methods     = ["*"]
     allow_headers     = ["date", "keep-alive"]
     expose_headers    = ["keep-alive", "date"]
