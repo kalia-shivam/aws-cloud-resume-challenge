@@ -25,7 +25,7 @@ jobs:
           pip install pytest boto3
 
       - name: Run tests
-        run: pytest infra/lambda_function/tests
+        run: pytest tests
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
