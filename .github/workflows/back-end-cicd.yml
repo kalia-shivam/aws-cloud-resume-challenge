@@ -24,6 +24,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest boto3
 
+      - name: Set AWS region
+        run: echo "AWS_DEFAULT_REGION=us-east-1" >> $GITHUB_ENV
+
       - name: Run tests
         run: |
           PYTHONPATH=$PYTHONPATH:$(pwd) pytest tests/
