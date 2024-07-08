@@ -25,7 +25,9 @@ jobs:
           pip install pytest boto3
 
       - name: Run tests
-        run: pytest tests
+        run: |
+          PYTHONPATH=$PYTHONPATH:$(pwd) pytest tests/
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
