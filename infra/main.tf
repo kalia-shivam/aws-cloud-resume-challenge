@@ -3,7 +3,7 @@ resource "aws_lambda_function" "mycloudresumefunc" {
   source_code_hash = data.archive_file.zip_the_python_code.output_base64sha256
   function_name    = "mycloudresumefunc"
   role             = aws_iam_role.iam_for_lambda.arn
-  handler          = "cloud-resume-funtion.lambda_handler"
+  handler          = "cloud_resume_function.lambda_handler"
   runtime          = "python3.8"
 }
 
@@ -66,8 +66,8 @@ resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
 
 data "archive_file" "zip_the_python_code" {
   type        = "zip"
-  source_file = "${path.module}/lambda_function/cloud-resume-funtion.py"
-  output_path = "${path.module}/lambda_function/cloud-resume-funtion.zip"
+  source_file = "${path.module}/lambda_function/cloud_resume_function.py"
+  output_path = "${path.module}/lambda_function/cloud_resume_function.zip"
 }
 
 resource "aws_lambda_function_url" "url1" {
